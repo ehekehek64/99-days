@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>99 Days With You ♡</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #111827;
+            color: #f5f1ea;
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: #f5f1ea;
+            color: #111827;
+        }
+
+
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        .eyebrow {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.55;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: clamp(38px, 6vw, 72px);
+            font-weight: normal;
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .section-subtitle {
+            max-width: 650px;
+            font-size: 17px;
+            opacity: 0.65;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #263653 0%,
+                    #1a263b 40%,
+                    #111827 78%
+                );
+
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-small {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            opacity: 0.55;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: clamp(70px, 15vw, 170px);
+            font-weight: normal;
+            line-height: 0.85;
+            letter-spacing: -6px;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-size: 0.43em;
+            letter-spacing: 5px;
+            margin-top: 28px;
+            opacity: 0.85;
+        }
+
+        .hero-name {
+            margin-top: 45px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.65;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.4;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 8px);
+            }
+        }
+
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            text-align: center;
+            padding: 150px 20px;
+            background: #111827;
+        }
+
+        .intro-text {
+            max-width: 760px;
+            margin: auto;
+            font-size: clamp(25px, 4vw, 43px);
+            line-height: 1.45;
+            font-style: italic;
+        }
+
+        .intro-small {
+            margin-top: 35px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            opacity: 0.4;
+            text-transform: uppercase;
+        }
+
+
+
+        /* =========================
+           TIMELINE
+        ========================= */
+
+        .timeline-section {
+            position: relative;
+            background: #111827;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(245, 241, 234, 0.18);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 30px 60px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 43px;
+            width: 9px;
+            height: 9px;
+            border: 1px solid #f5f1ea;
+            border-radius: 50%;
+            background: #111827;
+        }
+
+        .timeline-item.left .timeline-dot {
+            right: -5px;
+        }
+
+        .timeline-item.right .timeline-dot {
+            left: -5px;
+        }
+
+        .timeline-date {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            opacity: 0.45;
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .timeline-description {
+            font-size: 15px;
+            opacity: 0.55;
+        }
+
+
+
+        /* =========================
+           MEMORIES
+        ========================= */
+
+        .memories {
+            background: #172033;
+        }
+
+        .memory-header {
+            text-align: center;
+            margin-bottom: 90px;
+        }
+
+        .memory {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+            margin-bottom: 130px;
+        }
+
+        .memory:nth-child(even) .memory-image {
+            order: 2;
+        }
+
+        .memory:nth-child(even) .memory-info {
+            order: 1;
+            text-align: right;
+        }
+
+        .memory-image {
+            overflow: hidden;
+            background: #1d293d;
+        }
+
+        .memory-image img {
+            width: 100%;
+            height: 560px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .memory-image:hover img {
+            transform: scale(1.04);
+        }
+
+        .memory-info {
+            padding: 20px;
+        }
+
+        .memory-number {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            opacity: 0.35;
+            margin-bottom: 18px;
+        }
+
+        .memory-date {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            opacity: 0.45;
+            margin-bottom: 10px;
+        }
+
+        .memory-title {
+            font-size: clamp(30px, 4vw, 48px);
+            font-weight: normal;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .memory-text {
+            font-size: 15px;
+            opacity: 0.55;
+            max-width: 450px;
+        }
+
+
+
+        /* =========================
+           SPECIAL DAY
+        ========================= */
+
+        .special {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #2a3550 0%,
+                    #1a263b 55%,
+                    #111827 100%
+                );
+        }
+
+        .special::before {
+            content: "10";
+            position: absolute;
+            font-size: 35vw;
+            line-height: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(245, 241, 234, 0.025);
+            pointer-events: none;
+        }
+
+        .special-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .special-date {
+            font-family: Arial, sans-serif;
+            letter-spacing: 8px;
+            font-size: 13px;
+            opacity: 0.5;
+            margin-bottom: 30px;
+        }
+
+        .special h2 {
+            font-size: clamp(48px, 8vw, 100px);
+            font-weight: normal;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .special-text {
+            max-width: 600px;
+            margin: auto;
+            font-size: 17px;
+            opacity: 0.6;
+        }
+
+
+
+        /* =========================
+           A LITTLE LETTER
+        ========================= */
+
+        .letter-section {
+            background: #172033;
+        }
+
+        .letter {
+            max-width: 760px;
+            margin: auto;
+        }
+
+        .letter-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .letter-paper {
+            padding: 65px 70px;
+            border: 1px solid rgba(245, 241, 234, 0.12);
+            background: rgba(255, 255, 255, 0.035);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .letter-paper h3 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 35px;
+        }
+
+        .letter-paper p {
+            font-size: 16px;
+            line-height: 2;
+            opacity: 0.72;
+            margin-bottom: 22px;
+        }
+
+        .letter-signature {
+            margin-top: 40px;
+            font-style: italic;
+            font-size: 18px;
+            opacity: 0.85;
+        }
+
+
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        .final {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: #111827;
+        }
+
+        .final-content {
+            max-width: 800px;
+        }
+
+        .final-number {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 5px;
+            opacity: 0.4;
+            margin-bottom: 30px;
+        }
+
+        .final h2 {
+            font-size: clamp(55px, 10vw, 120px);
+            font-weight: normal;
+            line-height: 0.95;
+            margin-bottom: 35px;
+        }
+
+        .final-text {
+            max-width: 500px;
+            margin: auto;
+            opacity: 0.55;
+            font-size: 16px;
+        }
+
+        .final-button {
+            margin-top: 45px;
+            background: transparent;
+            border: 1px solid rgba(245, 241, 234, 0.35);
+            color: #f5f1ea;
+            padding: 16px 32px;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .final-button:hover {
+            background: #f5f1ea;
+            color: #111827;
+            border-color: #f5f1ea;
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 45px 20px 30px;
+            text-align: center;
+            border-top: 1px solid rgba(245, 241, 234, 0.08);
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            letter-spacing: 3px;
+            opacity: 0.35;
+            text-transform: uppercase;
+            background: #111827;
+        }
+
+
+
+        /* =========================
+           SURPRISE BUTTON
+        ========================= */
+
+        .surprise-area {
+            padding: 45px 20px 100px;
+            text-align: center;
+            background: #111827;
+        }
+
+        .surprise-button {
+            background: transparent;
+            color: #f5f1ea;
+            border: 1px solid rgba(245, 241, 234, 0.28);
+            padding: 17px 34px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .surprise-button:hover {
+            background: #f5f1ea;
+            color: #111827;
+            border-color: #f5f1ea;
+            transform: translateY(-2px);
+        }
+
+
+
+        /* =========================
+           NETEASE MUSIC
+        ========================= */
+
+        .hidden-music {
+            position: fixed;
+            width: 1px;
+            height: 1px;
+            left: -9999px;
+            top: -9999px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+
+
+        /* =========================
+           SURPRISE SCREEN
+        ========================= */
+
+        .surprise-screen {
+            position: fixed;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #3a2948 0%,
+                    #1c1b2d 42%,
+                    #101522 100%
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 9999;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 1.2s ease,
+                visibility 1.2s ease;
+
+            overflow: hidden;
+        }
+
+        .surprise-screen.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+
+        /* =========================
+           SURPRISE CONTENT
+        ========================= */
+
+        .surprise-content {
+            position: relative;
+            z-index: 3;
+
+            transform: scale(0.8);
+            opacity: 0;
+
+            transition:
+                all 1.2s cubic-bezier(
+                    0.22,
+                    1,
+                    0.36,
+                    1
+                );
+        }
+
+        .surprise-screen.active .surprise-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+
+
+        /* =========================
+           BIG HEART
+        ========================= */
+
+        .big-heart {
+            font-size: clamp(130px, 25vw, 300px);
+            line-height: 0.9;
+            display: block;
+            transform-origin: center;
+
+            animation:
+                heartbeat 1.25s ease-in-out infinite;
+
+            filter:
+                drop-shadow(
+                    0 0 35px
+                    rgba(255, 100, 130, 0.3)
+                );
+        }
+
+        @keyframes heartbeat {
+
+            0% {
+                transform: scale(1);
+            }
+
+            12% {
+                transform: scale(1.12);
+            }
+
+            24% {
+                transform: scale(1);
+            }
+
+            36% {
+                transform: scale(1.08);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .surprise-title {
+            margin-top: 35px;
+            font-size:
+                clamp(
+                    34px,
+                    6vw,
+                    65px
+                );
+            font-weight: normal;
+            line-height: 1.1;
+        }
+
+        .surprise-subtitle {
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            opacity: 0.55;
+        }
+
+        .surprise-love {
+            margin-top: 28px;
+            font-size: 20px;
+            font-style: italic;
+            opacity: 0.75;
+        }
+
+
+
+        /* =========================
+           FLOATING CUTE EMOJIS
+        ========================= */
+
+        .floating-emoji {
+            position: fixed;
+            left: 0;
+            bottom: -70px;
+            pointer-events: none;
+            user-select: none;
+            z-index: 10001;
+            line-height: 1;
+
+            will-change:
+                transform,
+                opacity;
+
+            animation:
+                emojiFloat
+                var(--duration)
+                linear
+                forwards;
+
+            filter:
+                drop-shadow(
+                    0 3px 8px
+                    rgba(0, 0, 0, 0.18)
+                );
+        }
+
+        @keyframes emojiFloat {
+
+            0% {
+                transform:
+                    translate3d(
+                        0,
+                        0,
+                        0
+                    )
+                    rotate(0deg)
+                    scale(0.7);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity:
+                    var(--opacity);
+
+                transform:
+                    translate3d(
+                        var(--sway1),
+                        -8vh,
+                        0
+                    )
+                    rotate(var(--rotate1))
+                    scale(1);
+            }
+
+            30% {
+                transform:
+                    translate3d(
+                        var(--sway2),
+                        -32vh,
+                        0
+                    )
+                    rotate(var(--rotate2))
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate3d(
+                        var(--sway3),
+                        -55vh,
+                        0
+                    )
+                    rotate(var(--rotate3))
+                    scale(1.05);
+            }
+
+            70% {
+                transform:
+                    translate3d(
+                        var(--sway4),
+                        -78vh,
+                        0
+                    )
+                    rotate(var(--rotate4))
+                    scale(1);
+            }
+
+            88% {
+                opacity:
+                    var(--opacity);
+            }
+
+            100% {
+                transform:
+                    translate3d(
+                        var(--sway5),
+                        -120vh,
+                        0
+                    )
+                    rotate(var(--rotate5))
+                    scale(0.8);
+
+                opacity: 0;
+            }
+        }
+
+
+
+        /* =========================
+           OLD FLOATING HEARTS
+        ========================= */
+
+        .heart {
+            position: fixed;
+            pointer-events: none;
+            font-size: 16px;
+
+            animation:
+                heartFloat
+                3s
+                ease-out
+                forwards;
+
+            z-index: 10000;
+        }
+
+        @keyframes heartFloat {
+
+            0% {
+                opacity: 0;
+
+                transform:
+                    translateY(0)
+                    scale(0.5);
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+
+                transform:
+                    translateY(-180px)
+                    scale(1.2);
+            }
+        }
+
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            section {
+                padding: 90px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .timeline::before {
+                left: 12px;
+            }
+
+            .timeline-item,
+            .timeline-item.left,
+            .timeline-item.right {
+
+                width: 100%;
+                left: 0;
+                text-align: left;
+
+                padding:
+                    25px
+                    20px
+                    25px
+                    45px;
+            }
+
+            .timeline-item.left .timeline-dot,
+            .timeline-item.right .timeline-dot {
+
+                left: 8px;
+                right: auto;
+            }
+
+            .memory {
+
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 90px;
+            }
+
+            .memory:nth-child(even) .memory-image {
+                order: 1;
+            }
+
+            .memory:nth-child(even) .memory-info {
+
+                order: 2;
+                text-align: left;
+            }
+
+            .memory-image img {
+                height: 430px;
+            }
+
+            .memory-info {
+                padding:
+                    10px
+                    0;
+            }
+
+            .letter-paper {
+                padding:
+                    40px
+                    25px;
+            }
+
+            .letter-paper p {
+                font-size: 15px;
+                line-height: 1.9;
+            }
+
+            .special h2 {
+                font-size: 55px;
+            }
+
+            .surprise-title {
+                padding:
+                    0
+                    20px;
+            }
+
+            .surprise-love {
+                padding:
+                    0
+                    25px;
+            }
+
+            .big-heart {
+                font-size:
+                    170px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content reveal">
+
+            <div class="hero-small">
+                A little chapter of us
+            </div>
+
+            <h1>
+
+                99 Days
+
+                <span>
+                    With You
+                </span>
+
+            </h1>
+
+            <div class="hero-name">
+                To my favourite girl, Adelyn ♡
+            </div>
+
+        </div>
+
+        <div class="scroll-down">
+            Start our story ↓
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         INTRO
+    ========================= -->
+
+    <section class="intro">
+
+        <div class="container reveal">
+
+            <div class="intro-text">
+                “Somehow, you became my favourite part of every day.”
+            </div>
+
+            <div class="intro-small">
+                99 days · countless little moments
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TIMELINE
+    ========================= -->
+
+    <section class="timeline-section">
+
+        <div class="container">
+
+            <div class="timeline-header reveal">
+
+                <div class="eyebrow">
+                    Our little timeline
+                </div>
+
+                <h2 class="section-title">
+                    Before we became us.
+                </h2>
+
+                <p
+                    class="section-subtitle"
+                    style="margin:auto;"
+                >
+                    A few dates that slowly turned into something I never expected.
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline">
+
+
+
+                <div class="timeline-item left reveal">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-date">
+                        21 APR
+                    </div>
+
+                    <div class="timeline-title">
+                        THE FIRST “DATE”
+                    </div>
+
+                    <div class="timeline-description">
+                        Maybe it wasn't officially a date yet,
+                        but looking back now, it definitely feels like one.
+                    </div>
+
+                </div>
+
+
+
+                <div class="timeline-item right reveal">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-date">
+                        20 MAY
+                    </div>
+
+                    <div class="timeline-title">
+                        THE FIRST VALENTINE “DATE”
+                    </div>
+
+                    <div class="timeline-description">
+                        Just two people spending time together,
+                        slowly becoming a little more special to each other.
+                    </div>
+
+                </div>
+
+
+
+                <div class="timeline-item left reveal">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-date">
+                        03 JUN
+                    </div>
+
+                    <div class="timeline-title">
+                        THE FIRST CONFESS
+                    </div>
+
+                    <div class="timeline-description">
+                        The moment everything suddenly felt a little more real.
+                    </div>
+
+                </div>
+
+
+
+                <div class="timeline-item right reveal">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-date">
+                        10 JUN
+                    </div>
+
+                    <div class="timeline-title">
+                        THE DAY WE BECAME US
+                    </div>
+
+                    <div class="timeline-description">
+                        And somehow, “you and me” became “us”.
+                    </div>
+
+                </div>
+
+
+
+                <div class="timeline-item left reveal">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-date">
+                        07 SEP
+                    </div>
+
+                    <div class="timeline-title">
+                        LONG TIME NO SEE, BAE
+                    </div>
+
+                    <div class="timeline-description">
+                        A little reminder that distance can make
+                        seeing each other feel even more special.
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MEMORIES
+    ========================= -->
+
+    <section class="memories">
+
+        <div class="container">
+
+            <div class="memory-header reveal">
+
+                <div class="eyebrow">
+                    Little memories
+                </div>
+
+                <h2 class="section-title">
+                    Moments I want to keep.
+                </h2>
+
+                <p
+                    class="section-subtitle"
+                    style="margin:auto;"
+                >
+                    Not every memory needs to be big.
+                    Sometimes the smallest moments become the ones we remember the most.
+                </p>
+
+            </div>
+
+
+
+            <!-- 21 APR -->
+
+            <div class="memory reveal">
+
+                <div class="memory-image">
+
+                    <img
+                        src="images/1 (2).jpeg"
+                        alt="21 April"
+                    >
+
+                </div>
+
+
+
+                <div class="memory-info">
+
+                    <div class="memory-number">
+                        MEMORY 01
+                    </div>
+
+                    <div class="memory-date">
+                        21 APR
+                    </div>
+
+                    <h3 class="memory-title">
+                        The First “Date”
+                    </h3>
+
+                    <p class="memory-text">
+                        Looking back, I think this was one of those little
+                        moments where something between us quietly started to change.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 20 MAY -->
+
+            <div class="memory reveal">
+
+                <div class="memory-image">
+
+                    <img
+                        src="images/3.jpeg"
+                        alt="20 May"
+                    >
+
+                </div>
+
+
+
+                <div class="memory-info">
+
+                    <div class="memory-number">
+                        MEMORY 02
+                    </div>
+
+                    <div class="memory-date">
+                        20 MAY
+                    </div>
+
+                    <h3 class="memory-title">
+                        The First Valentine “Date”
+                    </h3>
+
+                    <p class="memory-text">
+                        A shy girl met a proactive boy that day, marking the beginning of our love story.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 03 JUN -->
+
+            <div class="memory reveal">
+
+                <div class="memory-image">
+
+                    <img
+                        src="images/2.jpeg"
+                        alt="3 June"
+                    >
+
+                </div>
+
+
+
+                <div class="memory-info">
+
+                    <div class="memory-number">
+                        MEMORY 03
+                    </div>
+
+                    <div class="memory-date">
+                        03 JUN
+                    </div>
+
+                    <h3 class="memory-title">
+                        The First Confess
+                    </h3>
+
+                    <p class="memory-text">
+                        The day when feelings that had been quietly growing
+                        finally became something we could no longer pretend wasn't there.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 10 JUN -->
+
+            <div class="memory reveal">
+
+                <div
+                    class="memory-image"
+                    style="
+                        height:560px;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        background:
+                        radial-gradient(
+                            circle at center,
+                            #263653 0%,
+                            #1a263b 65%
+                        );
+                    "
+                >
+
+                    <div
+                        style="
+                            text-align:center;
+                            opacity:0.8;
+                            padding:30px;
+                        "
+                    >
+
+                        <div
+                            style="
+                                font-family:Arial,sans-serif;
+                                font-size:11px;
+                                letter-spacing:4px;
+                                opacity:0.5;
+                                margin-bottom:20px;
+                            "
+                        >
+                            10 · 06
+                        </div>
+
+                        <div
+                            style="
+                                font-size:60px;
+                                line-height:1;
+                                margin-bottom:20px;
+                            "
+                        >
+                            ♡
+                        </div>
+
+                        <div
+                            style="
+                                font-size:25px;
+                            "
+                        >
+                            The day we became us.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="memory-info">
+
+                    <div class="memory-number">
+                        MEMORY 04
+                    </div>
+
+                    <div class="memory-date">
+                        10 JUN
+                    </div>
+
+                    <h3 class="memory-title">
+                        The Day We Became Us
+                    </h3>
+
+                    <p class="memory-text">
+                        Out of all the days before and after,
+                        this one will always have a little place of its own.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 07 SEP -->
+
+            <div class="memory reveal">
+
+                <div class="memory-image">
+
+                    <img
+                        src="images/4 (2).jpeg"
+                        alt="7 September"
+                    >
+
+                </div>
+
+
+
+                <div class="memory-info">
+
+                    <div class="memory-number">
+                        MEMORY 05
+                    </div>
+
+                    <div class="memory-date">
+                        07 SEP
+                    </div>
+
+                    <h3 class="memory-title">
+                        Long Time No See, Bae
+                    </h3>
+
+                    <p class="memory-text">
+                        Maybe distance changes how often we meet,
+                        but it definitely doesn't change how happy I am when I finally see you again.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SPECIAL DAY
+    ========================= -->
+
+    <section class="special">
+
+        <div class="special-content reveal">
+
+            <div class="special-date">
+                10 · 06 · OUR DAY
+            </div>
+
+            <h2>
+                The day<br>
+                we became us.
+            </h2>
+
+            <p class="special-text">
+                Out of all the days before and after,
+                this one will always have a little place of its own.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         A LITTLE LETTER
+    ========================= -->
+
+    <section class="letter-section">
+
+        <div class="container">
+
+            <div class="letter">
+
+                <div class="letter-header reveal">
+
+                    <div class="eyebrow">
+                        A Little Letter 💌
+                    </div>
+
+                    <h2 class="section-title">
+                        For you.
+                    </h2>
+
+                </div>
+
+
+
+                <div class="letter-paper reveal">
+
+                    <h3>
+                        To my favourite girl 我的小乖乖，
+                    </h3>
+
+
+
+                    <p>
+                        不知不觉 我们已经99天啦。💗
+                    </p>
+
+
+
+                    <p>
+                        回头看看这99天，好像也没有什么特别轰轰烈烈的故事，
+                        但就是在一次次见面、聊天、吃东西、抱抱，还有那些小小的惊喜里面，
+                        我们慢慢走到了今天。✨
+                    </p>
+
+
+
+                    <p>
+                        这99天里，我最喜欢的其实不是某一个特别的瞬间，
+                        而是慢慢发现——原来我的生活里，
+                        已经多了一个可以分享开心、委屈、废话和各种小事情的人。🐑
+                    </p>
+
+
+
+                    <p>
+                        现在的你，也正式开始了属于自己的大学生活。
+
+                        虽然我们之间多了一点距离，以后也不能像以前一样想见面就马上见面，
+
+                        但我还是希望你可以放心地去体验属于你的大学生活，
+
+                        认识新的朋友，遇见新的事情，慢慢找到属于自己的生活。🫂
+                    </p>
+
+
+
+                    <p>
+                        而无论以后遇到什么事情，
+
+                        我都希望自己可以一直当你的那个小开心果。
+
+                        在你开心的时候陪你一起笑，在你难熬的时候陪你慢慢走过去。🥰
+                    </p>
+
+
+
+                    <p>
+                        我也会尽我最大的努力，
+
+                        成为那个值得你依靠的男孩。👱🏻‍♂️
+                    </p>
+
+
+
+                    <p>
+                        我知道未来的我们一定也会遇到一些问题，
+
+                        可能会有不开心、争吵，甚至有觉得很累的时候。
+
+                        但我希望不管发生什么，我们都不要轻易放开彼此的手。🫳🏻🫴🏻
+                    </p>
+
+
+
+                    <p>
+                        有什么事情就一起面对，一起想办法，一起走过去。
+
+                        我们不用一直做到最好，但可以一起慢慢变得更好。❤️
+                    </p>
+
+
+
+                    <p>
+                        99天只是一个小小的数字而已。
+                    </p>
+
+
+
+                    <p>
+                        以后还有很多很多天，我们慢慢走就好了。💖
+                    </p>
+
+
+
+                    <p>
+                        Happy 99 days, my girl. 🌷
+
+                        99天快乐 就祝我们长长99呐💗
+                    </p>
+
+
+
+                    <p>
+                        希望下一次写信的时候，<br>
+                        我们已经又一起创造了很多新的故事。
+                    </p>
+
+
+
+                    <div class="letter-signature">
+                        Love you always. 💞
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL
+    ========================= -->
+
+    <section class="final">
+
+        <div class="final-content reveal">
+
+            <div class="final-number">
+                DAY 99
+            </div>
+
+            <h2>
+                And I'd choose<br>
+                you again.
+            </h2>
+
+            <p class="final-text">
+                99 days down.
+
+                There are still so many pages left to write.
+            </p>
+
+            <button
+                class="final-button"
+                onclick="showLove()"
+            >
+                ONE MORE THING...
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+        MADE WITH LOVE · 99 DAYS WITH ADELYN ♡
+    </footer>
+
+
+
+    <!-- =========================
+         SURPRISE BUTTON
+    ========================= -->
+
+    <div class="surprise-area">
+
+        <button
+            class="surprise-button"
+            onclick="openSurprise()"
+        >
+            点击还有惊喜 ♡
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         HIDDEN NETEASE MUSIC
+         多远都要在一起
+    ========================= -->
+
+    <iframe
+        id="musicPlayer"
+        class="hidden-music"
+        frameborder="no"
+        border="0"
+        marginwidth="0"
+        marginheight="0"
+        width="330"
+        height="86"
+        src="//music.163.com/outchain/player?type=2&id=30612793&auto=1&height=66">
+    </iframe>
+
+
+
+    <!-- =========================
+         SURPRISE SCREEN
+    ========================= -->
+
+    <div
+        class="surprise-screen"
+        id="surpriseScreen"
+    >
+
+        <div class="surprise-content">
+
+            <span class="big-heart">
+                ❤️
+            </span>
+
+            <div class="surprise-title">
+                99天快乐，我的小乖乖
+            </div>
+
+            <div class="surprise-subtitle">
+                HAPPY 99 DAYS, MY GIRL
+            </div>
+
+            <div class="surprise-love">
+                I love you, always. 🤍
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target
+                                .classList
+                                .add("show");
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+
+        document
+            .querySelectorAll(".reveal")
+            .forEach(element => {
+
+                observer.observe(element);
+
+            });
+
+
+
+        /* =========================
+           FINAL BUTTON
+        ========================= */
+
+        function showLove() {
+
+            const button =
+                document.querySelector(
+                    ".final-button"
+                );
+
+            button.innerHTML =
+                "99 days down. 999 more to go. ♡";
+
+            button.style.borderColor =
+                "rgba(245,241,234,0.8)";
+
+            createHearts();
+
+
+
+            setTimeout(() => {
+
+                button.innerHTML =
+                    "I LOVE YOU";
+
+            }, 2500);
+
+        }
+
+
+
+        /* =========================
+           SURPRISE SYSTEM
+        ========================= */
+
+        let emojiInterval = null;
+
+
+
+        function openSurprise() {
+
+            const screen =
+                document.getElementById(
+                    "surpriseScreen"
+                );
+
+            const music =
+                document.getElementById(
+                    "musicPlayer"
+                );
+
+
+
+            /*
+                Open surprise screen
+            */
+
+            screen.classList.add("active");
+
+
+
+            /*
+                Restart the music iframe.
+            */
+
+            music.src =
+                "//music.163.com/outchain/player?type=2&id=30612793&auto=1&height=66";
+
+
+
+            /*
+                Create emojis immediately
+            */
+
+            for (
+                let i = 0;
+                i < 28;
+                i++
+            ) {
+
+                setTimeout(
+                    createCuteEmoji,
+                    i * 100
+                );
+
+            }
+
+
+
+            /*
+                Continue creating emojis
+            */
+
+            if (emojiInterval === null) {
+
+                emojiInterval =
+                    setInterval(
+                        createCuteEmoji,
+                        450
+                    );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           CUTE EMOJIS
+        ========================= */
+
+        const cuteEmojis = [
+
+            "♡",
+            "♥",
+            "💕",
+            "💗",
+            "💖",
+            "💓",
+            "💞",
+            "💘",
+            "🌷",
+            "🌸",
+            "🌼",
+            "🌻",
+            "💐",
+            "🌺",
+            "✿",
+            "❀",
+            "✨",
+            "⭐",
+            "🌟",
+            "🫶🏻"
+
+        ];
+
+
+
+        /* =========================
+           CREATE FLOATING EMOJI
+        ========================= */
+
+        function createCuteEmoji() {
+
+            const emoji =
+                document.createElement(
+                    "div"
+                );
+
+
+
+            emoji.className =
+                "floating-emoji";
+
+
+
+            /*
+                Pick random emoji
+            */
+
+            emoji.textContent =
+                cuteEmojis[
+                    Math.floor(
+                        Math.random() *
+                        cuteEmojis.length
+                    )
+                ];
+
+
+
+            /*
+                Random horizontal position
+            */
+
+            emoji.style.left =
+                Math.random() *
+                100 +
+                "vw";
+
+
+
+            /*
+                Random size
+            */
+
+            const size =
+                16 +
+                Math.random() *
+                24;
+
+            emoji.style.fontSize =
+                size +
+                "px";
+
+
+
+            /*
+                Random animation duration
+            */
+
+            const duration =
+                6 +
+                Math.random() *
+                5;
+
+            emoji.style.setProperty(
+                "--duration",
+                duration + "s"
+            );
+
+
+
+            /*
+                Random opacity
+            */
+
+            const opacity =
+                0.45 +
+                Math.random() *
+                0.45;
+
+            emoji.style.setProperty(
+                "--opacity",
+                opacity
+            );
+
+
+
+            /*
+                Random sideways movement
+            */
+
+            const sway1 =
+                (Math.random() - 0.5) *
+                100;
+
+            const sway2 =
+                (Math.random() - 0.5) *
+                180;
+
+            const sway3 =
+                (Math.random() - 0.5) *
+                240;
+
+            const sway4 =
+                (Math.random() - 0.5) *
+                180;
+
+            const sway5 =
+                (Math.random() - 0.5) *
+                320;
+
+
+
+            emoji.style.setProperty(
+                "--sway1",
+                sway1 + "px"
+            );
+
+            emoji.style.setProperty(
+                "--sway2",
+                sway2 + "px"
+            );
+
+            emoji.style.setProperty(
+                "--sway3",
+                sway3 + "px"
+            );
+
+            emoji.style.setProperty(
+                "--sway4",
+                sway4 + "px"
+            );
+
+            emoji.style.setProperty(
+                "--sway5",
+                sway5 + "px"
+            );
+
+
+
+            /*
+                Random rotation
+            */
+
+            emoji.style.setProperty(
+                "--rotate1",
+                ((Math.random() - 0.5) * 40) +
+                "deg"
+            );
+
+            emoji.style.setProperty(
+                "--rotate2",
+                ((Math.random() - 0.5) * 70) +
+                "deg"
+            );
+
+            emoji.style.setProperty(
+                "--rotate3",
+                ((Math.random() - 0.5) * 90) +
+                "deg"
+            );
+
+            emoji.style.setProperty(
+                "--rotate4",
+                ((Math.random() - 0.5) * 120) +
+                "deg"
+            );
+
+            emoji.style.setProperty(
+                "--rotate5",
+                ((Math.random() - 0.5) * 160) +
+                "deg"
+            );
+
+
+
+            /*
+                Add emoji to page
+            */
+
+            document.body.appendChild(
+                emoji
+            );
+
+
+
+            /*
+                Remove after animation
+            */
+
+            setTimeout(
+                () => {
+
+                    if (
+                        emoji &&
+                        emoji.parentNode
+                    ) {
+
+                        emoji.remove();
+
+                    }
+
+                },
+                (duration + 1) * 1000
+            );
+
+        }
+
+
+
+        /* =========================
+           EXTRA HEART EFFECT
+        ========================= */
+
+        function createHearts() {
+
+            for (
+                let i = 0;
+                i < 18;
+                i++
+            ) {
+
+                const heart =
+                    document.createElement(
+                        "div"
+                    );
+
+                heart.classList.add(
+                    "heart"
+                );
+
+                heart.innerHTML =
+                    "♡";
+
+
+
+                heart.style.left =
+                    Math.random() *
+                    100 +
+                    "vw";
+
+
+
+                heart.style.top =
+                    65 +
+                    Math.random() *
+                    20 +
+                    "vh";
+
+
+
+                heart.style.animationDelay =
+                    Math.random() *
+                    0.8 +
+                    "s";
+
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+
+                setTimeout(
+                    () => {
+
+                        if (
+                            heart &&
+                            heart.parentNode
+                        ) {
+
+                            heart.remove();
+
+                        }
+
+                    },
+                    3500
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
